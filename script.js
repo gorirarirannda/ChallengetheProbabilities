@@ -61,32 +61,51 @@ function fight(){
     /*与ダメージの計算 */
     var PATK = 0;
     if (PCRIstat == true){
-        PATK = Ppower*2 - Eguard;
+        PATK = (Ppower)*2 - Eguard;
     }else{
         PATK = Ppower - Eguard;
     }
     var EATK = 0;
     if(ECRIstat == true){
-        EATK = Epower*2 - Pguard;
+        EATK = (Epower)*2 - Pguard;
     }else{
         EATK = Epower - Pguard;
     }
     /*ライフの計算 */
     var Plife_fighting = Plife;
-    Plife_fighting = Plife_fighting - EATK;
+    Plife = Plife_fighting - EATK;
     var Elife_fighting = Elife;
-    Elife_fighting = Elife_fighting - PATK;
+    Elife = Elife_fighting - PATK;
     var Pdead = false;
     var Edead = false;
-    if (Plife_fighting <= 0){
+    if (Plife <= 0){
         Pdead = true;
     }
-    if (Elife_fighting <= 0){
+    if (Elife <= 0){
         Edead = true;
     }
     /*fightlogの出力 */
     new_log = document.createElement("p");
     new_log.textContent = "プレイヤーの攻撃"+PATK;
     log_element.appendChild(new_log);
-    
+    new_log = document.createElement("p");
+    new_log.textContent = "敵の体力"+Elife;
+    log_element.appendChild(new_log);
+    new_log = document.createElement("p");
+    new_log.textContent = "敵の攻撃"+EATK;
+    log_element.appendChild(new_log);
+    new_log = document.createElement("p");
+    new_log.textContent = "プレイヤーの体力"+Plife;
+    log_element.appendChild(new_log);
+    if(Pdead == true){
+        new_log = document.createElement("p");
+        new_log.textContent = "プレイヤーは倒れた。";
+        log_element.appendChild(new_log);
+    }
+    if (Edead == true){
+        new_log = document.createElement("p");
+        new_log.textContent = "敵は倒れた。";
+        log_element.appendChild(new_log);
+    }
+
 }
