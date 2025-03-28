@@ -68,14 +68,14 @@ function fight(){
     if (PATK < 0){
         PATK = 0
     }
-    if (EATK < 0){
-        EATK = 0
-    }
     var EATK = 0;
     if(ECRIstat == true){
         EATK = (Epower)*2 - Pguard;
     }else{
         EATK = Epower - Pguard;
+    }
+    if (EATK < 0){
+        EATK = 0
     }
     /*ライフの計算 */
     var Plife_fighting = Plife;
