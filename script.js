@@ -88,4 +88,5 @@ function fight(){
     new_log = document.createElement("p");
     new_log.textContent = "プレイヤーの攻撃"+PATK;
     log_element.appendChild(new_log);
+    
 }
