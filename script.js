@@ -114,6 +114,9 @@ function fight(){
         log_element.appendChild(new_log);
     }
 }
+function miku(){
+    window.location.href = "miku.html"
+}
 function reload(){
     window.location.reload(true);
 }
