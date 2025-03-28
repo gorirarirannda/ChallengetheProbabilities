@@ -1,12 +1,20 @@
+var Plife = 0;
+var Ppower = 0;
+var Pguard = 0;
+var PCRI = 0;
+var Elife = 0;
+var Epower = 0;
+var Eguard = 0;
+var ECRI = 0;
 function mkstats(){
-    var Plife = Math.floor(Math.random()*5001);/*Player life */
-    var Ppower = Math.floor(Math.random()*3001);/*Player power */
-    var Pguard = Math.floor(Math.random()*3001);/*Player guard */
-    var PCRI = Math.floor(Math.random()*101);/*Player critical */
-    var Elife = Math.floor(Math.random()*5001);/*Enemy life */
-    var Epower = Math.floor(Math.random()*3001);/*Enemy power */
-    var Eguard = Math.floor(Math.random()*3001);/*Enemy guard */
-    var ECRI = Math.floor(Math.random()*101);/*Enemy critical */
+    Plife = Math.floor(Math.random()*5001);/*Player life */
+    Ppower = Math.floor(Math.random()*3001);/*Player power */
+    Pguard = Math.floor(Math.random()*3001);/*Player guard */
+    PCRI = Math.floor(Math.random()*101);/*Player critical */
+    Elife = Math.floor(Math.random()*5001);/*Enemy life */
+    Epower = Math.floor(Math.random()*3001);/*Enemy power */
+    Eguard = Math.floor(Math.random()*3001);/*Enemy guard */
+    ECRI = Math.floor(Math.random()*101);/*Enemy critical */
     
     var htmlPlife = document.getElementById("Plife");
     htmlPlife.innerHTML = Plife;
@@ -26,24 +34,26 @@ function mkstats(){
     var htmlECRI = document.getElementById("ECRI");
     htmlECRI.innerHTML = ECRI;
 }
+var new_log = null;
+let log_element = document.getElementById("fightlog");
 function fight(){
     /*クリティカル発動の有無 */
-    var PCRIstat = true;
+    var PCRIstat = false;
     var random = Math.floor(Math.random()*101);
     if (random == 0){
         random = 1;
     }
-    if (PCRI <= random){
+    if (PCRI >= random){
         PCRIstat = true;
     }else{
         PCRIstat = false;
     }
-    var ECRIstat = true;
+    var ECRIstat = false;
     random = Math.floor(Math.random()*101);
     if (random == 0){
         random = 1;
     }
-    if (ECRI <= random){
+    if (ECRI >= random){
         ECRIstat = true;
     }else{
         ECRIstat = false;
@@ -63,5 +73,20 @@ function fight(){
     }
     /*ライフの計算 */
     var Plife_fighting = Plife;
+    Plife_fighting = Plife_fighting - EATK;
+    var Elife_fighting = Elife;
+    Elife_fighting = Elife_fighting - PATK;
+    var Pdead = false;
+    var Edead = false;
+    if (Plife_fighting <= 0){
+        Pdead = true;
+    }
+    if (Elife_fighting <= 0){
+        Edead = true;
+    }
+    /*fightlogの出力 */
+    new_log = document.createElement("p");
+    new_log.textContent = "プレイヤーの攻撃"+PATK;
+    log_element.appendChild(new_log);
 
 }
