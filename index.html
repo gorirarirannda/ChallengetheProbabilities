@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1 id="title">確率に挑戦</h1>
-        <button onclick="mkstats()" id="button_stats">ステータス抽選</button>
+        <div id="randomstats"><button onclick="mkstats()" id="button_stats">ステータス抽選</button></div>
         <div id="stats">
             <div id="Pstats">
                 <b>Player</b>
@@ -31,12 +31,14 @@
                 </ul>
             </div>
         </div>
-        <button onclick="fight()" id="button_fight">Fight!</button>
-        <div id="fightlog">
-            <b id="firstlog">fightlog</b>
+        <div id="fight">
+            <p><button ></button></p>
         </div>
         <button onclick="miku()">reload</button>
         <button onclick="reload()">reload</button>
+        <div id="fightlog">
+            <b id="firstlog">fightlog</b>
+        </div>
         <script src="./script.js"></script>
     </body>
 </html>

@@ -33,10 +33,15 @@ function mkstats(){
     htmlEguard.innerHTML = Eguard;
     var htmlECRI = document.getElementById("ECRI");
     htmlECRI.innerHTML = ECRI;
+
+    var fightbutton = document.getElementById("fight");
+    fightbutton.innerHTML = `<button onclick="fight()" id="button_fight">Fight!</button>`;
 }
 var new_log = null;
 let log_element = document.getElementById("fightlog");
 function fight(){
+    var randomstats = document.getElementById("randomstats");
+    randomstats.innerHTML = `<button></button>`;
     /*クリティカル発動の有無 */
     var PCRIstat = false;
     var random = Math.floor(Math.random()*101);
