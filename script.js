@@ -113,5 +113,7 @@ function fight(){
         new_log.textContent = "敵は倒れた。";
         log_element.appendChild(new_log);
     }
-
+}
+function reload(){
+    window.location.reload(true);
 }
