@@ -30,6 +30,9 @@ function fight(){
     /*クリティカル発動の有無 */
     var PCRIstat = true;
     var random = Math.floor(Math.random()*101);
+    if (random == 0){
+        random = 1;
+    }
     if (PCRI <= random){
         PCRIstat = true;
     }else{
@@ -37,6 +40,9 @@ function fight(){
     }
     var ECRIstat = true;
     random = Math.floor(Math.random()*101);
+    if (random == 0){
+        random = 1;
+    }
     if (ECRI <= random){
         ECRIstat = true;
     }else{
