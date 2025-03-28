@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>確率に挑戦</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1 id="title">確率に挑戦</h1>
+        <button onclick="mkstats()" id="button_stats">ステータス抽選</button>
+        <div id="stats">
+            <div id="Pstats">
+                <ul class="statslist">
+                    <li>Life:<span id="Plife"></span></li>
+                    <li>Power:<span id="Ppower"></span></li>
+                    <li>Guard:<span id="Pguard"></span></li>
+                    <li>Critical:<span id="PCRI"></span>%</li>
+                </ul>
+            </div>
+            <div id="Estats">
+                <ul class="statslist">
+                    <li>Life:<span id="Elife"></span></li>
+                    <li>Power:<span id="Epower"></span></li>
+                    <li>Guard:<span id="Eguard"></span></li>
+                    <li>Critical:<span id="ECRI"></span>%</li>
+                </ul>
+            </div>
+        </div>
+        <button onclick="fight()" id="button_fight">Fight!</button>
+        <div id="fightlog">
+            
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

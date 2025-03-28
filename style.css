@@ -1,0 +1,10 @@
+#stats{
+    display: flex;
+    justify-content: space-between;
+}
+ul.statslist{
+    list-style-type: none;
+    border: solid black;
+    padding-left: unset;
+    text-align: left;
+}
