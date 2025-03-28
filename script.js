@@ -65,6 +65,12 @@ function fight(){
     }else{
         PATK = Ppower - Eguard;
     }
+    if (PATK < 0){
+        PATK = 0
+    }
+    if (EATK < 0){
+        EATK = 0
+    }
     var EATK = 0;
     if(ECRIstat == true){
         EATK = (Epower)*2 - Pguard;
