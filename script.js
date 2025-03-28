@@ -6,7 +6,7 @@ function mkstats(){
     var Elife = Math.floor(Math.random()*5001);/*Enemy life */
     var Epower = Math.floor(Math.random()*3001);/*Enemy power */
     var Eguard = Math.floor(Math.random()*3001);/*Enemy guard */
-    var ECRI = Math.floor(Math.random()*100);/*Enemy critical */
+    var ECRI = Math.floor(Math.random()*101);/*Enemy critical */
     
     var htmlPlife = document.getElementById("Plife");
     htmlPlife.innerHTML = Plife;
@@ -29,14 +29,14 @@ function mkstats(){
 function fight(){
     /*クリティカル発動の有無 */
     var PCRIstat = true;
-    var random = Math.floor(Math.random()*100);
+    var random = Math.floor(Math.random()*101);
     if (PCRI <= random){
         PCRIstat = true;
     }else{
         PCRIstat = false;
     }
     var ECRIstat = true;
-    random = Math.floor(Math.random()*100);
+    random = Math.floor(Math.random()*101);
     if (ECRI <= random){
         ECRIstat = true;
     }else{
@@ -57,5 +57,5 @@ function fight(){
     }
     /*ライフの計算 */
     var Plife_fighting = Plife;
-    
+
 }
