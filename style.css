@@ -1,6 +1,9 @@
+body{
+    text-align: center;
+}
 #stats{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 ul.statslist{
     list-style-type: none;
