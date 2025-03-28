@@ -96,15 +96,27 @@ function fight(){
         Edead = true;
     }
     /*fightlogの出力 */
-    new_log = document.createElement("p");
-    new_log.textContent = "プレイヤーの攻撃"+PATK;
-    log_element.appendChild(new_log);
+    if(PCRIstat == true){
+        new_log = document.createElement("p");
+        new_log.textContent = "プレイヤーのクリティカル攻撃"+PATK;
+        log_element.appendChild(new_log);
+    }else{
+        new_log = document.createElement("p");
+        new_log.textContent = "プレイヤーの攻撃"+PATK;
+        log_element.appendChild(new_log);
+    }
     new_log = document.createElement("p");
     new_log.textContent = "敵の体力"+Elife;
     log_element.appendChild(new_log);
-    new_log = document.createElement("p");
-    new_log.textContent = "敵の攻撃"+EATK;
-    log_element.appendChild(new_log);
+    if(ECRIstat == true){
+        new_log = document.createElement("p");
+        new_log.textContent = "敵のクリティカル攻撃"+EATK;
+        log_element.appendChild(new_log);
+    }else{
+        new_log = document.createElement("p");
+        new_log.textContent = "敵ーの攻撃"+EATK;
+        log_element.appendChild(new_log);
+    }
     new_log = document.createElement("p");
     new_log.textContent = "プレイヤーの体力"+Plife;
     log_element.appendChild(new_log);
