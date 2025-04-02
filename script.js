@@ -114,7 +114,7 @@ function fight(){
         log_element.appendChild(new_log);
     }else{
         new_log = document.createElement("p");
-        new_log.textContent = "敵ーの攻撃"+EATK;
+        new_log.textContent = "敵の攻撃"+EATK;
         log_element.appendChild(new_log);
     }
     new_log = document.createElement("p");
