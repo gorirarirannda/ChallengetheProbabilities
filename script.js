@@ -38,7 +38,9 @@ function mkstats(){
     fightbutton.innerHTML = `<button onclick="fight()" id="button_fight">Fight!</button>`;
 }
 var new_log = null;
-let log_element = document.getElementById("fightlog");
+let log_element = document.getElementById("log");
+let loggroup = document.createElement("div");
+var fighttimes = 1;
 function fight(){
     var randomstats = document.getElementById("randomstats");
     randomstats.innerHTML = `<button></button>`;
@@ -96,40 +98,49 @@ function fight(){
         Edead = true;
     }
     /*fightlogの出力 */
+    new_log = document.createElement("p");
+    new_log.textContent = fighttimes+"回目の戦闘";
+    log_element.prepend(new_log);
+    fighttimes = fighttimes + 1;
     if(PCRIstat == true){
         new_log = document.createElement("p");
         new_log.textContent = "プレイヤーのクリティカル攻撃"+PATK;
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }else{
         new_log = document.createElement("p");
         new_log.textContent = "プレイヤーの攻撃"+PATK;
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }
     new_log = document.createElement("p");
     new_log.textContent = "敵の体力"+Elife;
-    log_element.appendChild(new_log);
+    log_element.prepend(new_log);
     if(ECRIstat == true){
         new_log = document.createElement("p");
         new_log.textContent = "敵のクリティカル攻撃"+EATK;
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }else{
         new_log = document.createElement("p");
         new_log.textContent = "敵の攻撃"+EATK;
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }
     new_log = document.createElement("p");
     new_log.textContent = "プレイヤーの体力"+Plife;
-    log_element.appendChild(new_log);
+    log_element.prepend(new_log);
     if(Pdead == true){
         new_log = document.createElement("p");
         new_log.textContent = "プレイヤーは倒れた。";
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }
     if (Edead == true){
         new_log = document.createElement("p");
         new_log.textContent = "敵は倒れた。";
-        log_element.appendChild(new_log);
+        log_element.prepend(new_log);
     }
+    new_log = document.createElement("p");
+    new_log.textContent = "--------------------";
+    log_element.prepend(new_log);
+    
+    log_element.prepend(loggroup);
 }
 function miku(){
     window.location.href = "miku.html"
