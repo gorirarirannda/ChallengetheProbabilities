@@ -1,6 +1,16 @@
 body{
     text-align: center;
 }
+#explanation{
+    width: 400px;
+    height: auto;
+    padding: 15px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flexbox;
+    align-content: center;
+}
 #stats{
     display: flex;
     justify-content: space-evenly;
