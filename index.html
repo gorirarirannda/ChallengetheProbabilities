@@ -10,36 +10,47 @@
     </head>
     <body>
         <h1 id="title">確率に挑戦</h1>
-        <div id="randomstats"><button onclick="mkstats()" id="button_stats">ステータス抽選</button></div>
-        <div id="stats">
-            <div id="Pstats">
-                <b>Player</b>
-                <ul class="statslist">
-                    <li>Life:<span id="Plife"></span></li>
-                    <li>Power:<span id="Ppower"></span></li>
-                    <li>Guard:<span id="Pguard"></span></li>
-                    <li>Critical:<span id="PCRI"></span>%</li>
-                </ul>
+        <div id="gamearea">
+            <div id="randomstats"><button onclick="mkstats()" id="button_stats">ステータス抽選</button></div>
+            <div id="stats">
+                <div id="Pstats">
+                    <b>Player</b>
+                    <ul class="statslist">
+                        <li>Life:<span id="Plife"></span></li>
+                        <li>Power:<span id="Ppower"></span></li>
+                        <li>Guard:<span id="Pguard"></span></li>
+                        <li>Critical:<span id="PCRI"></span>%</li>
+                    </ul>
+                </div>
+                <div id="Estats">
+                    <b>Enemy</b>
+                    <ul class="statslist">
+                        <li>Life:<span id="Elife"></span></li>
+                        <li>Power:<span id="Epower"></span></li>
+                        <li>Guard:<span id="Eguard"></span></li>
+                        <li>Critical:<span id="ECRI"></span>%</li>
+                    </ul>
+                </div>
             </div>
-            <div id="Estats">
-                <b>Enemy</b>
-                <ul class="statslist">
-                    <li>Life:<span id="Elife"></span></li>
-                    <li>Power:<span id="Epower"></span></li>
-                    <li>Guard:<span id="Eguard"></span></li>
-                    <li>Critical:<span id="ECRI"></span>%</li>
-                </ul>
+            <div id="fight">
+                <p><button ></button></p>
+            </div>
+            <button onclick="miku()">reload</button>
+            <button onclick="reload()">reload</button>
+            <br>
+            <b id="firstlog">fightlog</b>
+            <div id="fightlog">
+                <div id="log" class="log_box"></div>
             </div>
         </div>
-        <div id="fight">
-            <p><button ></button></p>
-        </div>
-        <button onclick="miku()">reload</button>
-        <button onclick="reload()">reload</button>
-        <br>
-        <b id="firstlog">fightlog</b>
-        <div id="fightlog">
-            <div id="log" class="log_box"></div>
+        <div id="explanation">
+            <p>このゲームでは、プレイヤーと敵のステータスを比較し、戦闘を行います。ステータスを抽選して、戦闘を開始してください。</p>
+            <p>戦闘は、プレイヤーと敵の攻撃力、ガード力、クリティカル率を基に行われます。攻撃が成功すると、敵のライフが減少します。敵からも攻撃があります。敵のライフかプレイヤーのライフが0になるまで戦闘を続けてください。</p>
+            <p>プレイヤーと敵のダメージの算出方法は同じです。</p>
+            <p>攻撃=攻撃者のPower-攻撃を受ける側のGuard</p>
+            <p>クリティカル攻撃=攻撃側のCritical%の確率で攻撃者のPowerが2倍-攻撃を受ける側のGuard</p>
+            <p>体力が0を下回ると、ゲームオーバーになります。</p>
+            <p>ゲームオーバー後は、リロードボタンを押して再挑戦してください。</p>
         </div>
         <script src="./script.js"></script>
     </body>
