@@ -136,10 +136,11 @@ function fight(){
         new_log.textContent = "敵は倒れた。";
         log_element.prepend(new_log);
     }
+    //log間に区切り線を入れる
     new_log = document.createElement("p");
     new_log.textContent = "--------------------";
     log_element.prepend(new_log);
-    
+    //logをグループ化
     log_element.prepend(loggroup);
 }
 function miku(){
