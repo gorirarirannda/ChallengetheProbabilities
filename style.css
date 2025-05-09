@@ -1,15 +1,19 @@
 body{
     text-align: center;
 }
+#gamearea{
+    display:block;
+    justify-content: center;
+}
 #explanation{
-    width: 400px;
+    width:fit-content;
     height: auto;
     padding: 15px;
     border: 1px solid black;
     padding: 10px;
     background-color: #f9f9f9;
-    display: flexbox;
-    align-content: center;
+    display: block;
+    margin: auto;
 }
 #stats{
     display: flex;
