@@ -136,6 +136,11 @@ function fight(){
         new_log.textContent = "敵は倒れた。";
         log_element.prepend(new_log);
     }
+    if (Pdead == true && Edead == true){
+        new_log = document.createElement("p");
+        new_log.textContent = "みんないなくなった";
+        log_element.prepend(new_log);
+    }
     //log間に区切り線を入れる
     new_log = document.createElement("p");
     new_log.textContent = "--------------------";
