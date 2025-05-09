@@ -20,7 +20,7 @@ body{
     justify-content: space-evenly;
     margin-bottom: 0px;
 }
-#fight{
+#fight p{
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -36,7 +36,12 @@ ul.statslist{
     align-items: center;
     height: auto;
 }
-
+#all_dead{
+    color:goldenrod ;
+    font-size: x-large;
+    font-weight: bold;
+    text-shadow: 0px 0 1px black;
+}
 .log_box {
     width: 400px;
     height: 400px;

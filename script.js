@@ -139,6 +139,7 @@ function fight(){
     if (Pdead == true && Edead == true){
         new_log = document.createElement("p");
         new_log.textContent = "みんないなくなった";
+        new_log.id = "all_dead";
         log_element.prepend(new_log);
     }
     //log間に区切り線を入れる
