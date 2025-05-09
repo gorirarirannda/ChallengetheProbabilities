@@ -20,7 +20,7 @@ body{
     justify-content: space-evenly;
     margin-bottom: 0px;
 }
-#fight p{
+#fight{
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -50,3 +50,35 @@ ul.statslist{
   .log-box p {
     margin: 2px 0;
   }
+
+/*スマホ用*/
+@media (max-width: 600px) {
+    body{
+        display:block;
+        justify-content: center;
+        width: 100%;
+    }
+    button{
+        font-size: 18px;
+    }
+    #explanation{
+        width: 90%;
+        height: auto;
+        padding: 15px;
+        border: 1px solid black;
+        padding: 10px;
+        background-color: #f9f9f9;
+        display: block;
+        margin: auto;
+    }
+    #stats{
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 0px;
+    }
+    #fightlog{
+        margin: auto;
+        width: 50%;
+        height: auto;
+    }
+}
